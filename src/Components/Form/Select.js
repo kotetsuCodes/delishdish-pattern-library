@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import Theme from '../../Helpers/Theme'
 
 const SelectStyle = styled.select`
+  margin: 5px 0 5px 0;
   font-size: 1.25rem;
-  margin: 5px;
   display: 'block';
   padding: 16px;
   border-radius: 2px;

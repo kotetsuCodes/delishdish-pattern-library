@@ -4,7 +4,7 @@ import Icon from '../Icon'
 
 const CheckboxStyle = styled.div`
   padding-left: 16px;
-  margin: 2px;
+  margin: 5px 0 5px 0;
 `
 
 const CheckboxLabelStyle = styled.label`
@@ -19,10 +19,14 @@ const checkIcon = styled.i`
 export default class extends React.Component {
   render() {
     const {
-      id, labelDisplay, isChecked, size,
+      id, labelDisplay, isChecked, size, handleClick,
     } = this.props
+
+    console.log('checkbox re-rendering')
+    console.log(`checkbox is ${isChecked}`)
+
     return (
-      <div>
+      <div onClick={e => handleClick(e)}>
         {isChecked ? (
           <Icon size={size} className="far fa-check-square" />
         ) : (

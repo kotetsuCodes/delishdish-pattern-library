@@ -16,12 +16,6 @@ const ColorSwatch = styled.div`
   padding: 110px 32px 110px 32px;
 `
 
-const GridCellExample = styled.div`
-  background-color: ${props => props.backgroundColor};
-  border-style: dashed;
-  border: 1px solid black;
-`
-
 export default class extends React.Component {
   constructor(props) {
     super(props)
@@ -157,15 +151,25 @@ export default class extends React.Component {
             <CardContent>
               <TextInput placeholder="Regular text input" />
               <Select options={selectOptions} />
-              {/* <Toggle /> */}
-              <div onClick={e => this.handleClick(e)}>
-                <Checkbox size="small" labelDisplay="I'm a small checkbox!" isChecked={isChecked} />
+              <div>
+                <Checkbox
+                  size="small"
+                  labelDisplay="I'm a small checkbox!"
+                  isChecked={isChecked}
+                  handleClick={this.handleClick}
+                />
                 <Checkbox
                   size="medium"
                   labelDisplay="I'm a medium checkbox!"
                   isChecked={isChecked}
+                  handleClick={this.handleClick}
                 />
-                <Checkbox size="large" labelDisplay="I'm a large checkbox!" isChecked={isChecked} />
+                <Checkbox
+                  size="large"
+                  labelDisplay="I'm a large checkbox!"
+                  isChecked={isChecked}
+                  handleClick={this.handleClick}
+                />
               </div>
             </CardContent>
           </Card>
@@ -183,7 +187,7 @@ export default class extends React.Component {
                     height={4}
                     style={{
                       border: '1px solid black',
-                      'border-style': 'dashed',
+                      borderStyle: 'dashed',
                       backgroundColor: Theme.Default.Fill,
                     }}
                   >
