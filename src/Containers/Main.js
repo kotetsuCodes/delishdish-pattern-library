@@ -16,12 +16,28 @@ const ColorSwatch = styled.div`
   padding: 110px 32px 110px 32px;
 `
 
+const GridCellExample = styled.div`
+  background-color: ${props => props.backgroundColor};
+  border-style: dashed;
+  border: 1px solid black;
+`
+
 export default class extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       checkboxChecked: false,
     }
+  }
+
+  generateGridExample = () => {
+    const gridCells = []
+
+    for (let i = 1; i <= 12; i++) {
+      gridCells.push(`${i} / 12`)
+    }
+
+    return gridCells
   }
 
   handleClick = (e) => {
@@ -135,7 +151,6 @@ export default class extends React.Component {
           <Card
             backgroundColor={Theme.Cards.LightBlue.Fill}
             textColor={Theme.Cards.LightBlue.Color}
-            borderRadius={Theme.Cards.BorderRadius}
           >
             <CardTitle>Here be inputs!</CardTitle>
 
@@ -152,6 +167,30 @@ export default class extends React.Component {
                 />
                 <Checkbox size="large" labelDisplay="I'm a large checkbox!" isChecked={isChecked} />
               </div>
+            </CardContent>
+          </Card>
+        </Cell>
+
+        <Cell left={3} width={8} top={6}>
+          <Card backgroundColor={Theme.Cards.White.Fill} textColor={Theme.Cards.White.Color}>
+            <CardTitle textColor={Theme.Cards.White.Color}>Walk the plank...er..grid!</CardTitle>
+            <CardContent>
+              <Grid columns={12}>
+                {this.generateGridExample().map(item => (
+                  <Cell
+                    middle
+                    center
+                    height={4}
+                    style={{
+                      border: '1px solid black',
+                      'border-style': 'dashed',
+                      backgroundColor: Theme.Default.Fill,
+                    }}
+                  >
+                    {item}
+                  </Cell>
+                ))}
+              </Grid>
             </CardContent>
           </Card>
         </Cell>
