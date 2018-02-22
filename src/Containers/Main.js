@@ -4,13 +4,7 @@ import styled from 'styled-components'
 import { Card, CardTitle, CardContent } from '../Components/Card'
 import Theme from '../Helpers/Theme'
 import Button from '../Components/Button'
-import {
-  ExtraSmallHeading,
-  SmallHeading,
-  MediumHeading,
-  LargeHeading,
-  ExtraLargeHeading,
-} from '../Components/Heading'
+import Heading from '../Components/Heading'
 import TextInput from '../Components/Form/TextInput'
 import Select from '../Components/Form/Select'
 // import Toggle from '../Components/Form/Toggle'
@@ -54,7 +48,7 @@ export default class extends React.Component {
           >
             <CardTitle />
             <CardContent>
-              <MediumHeading>Welcome to the main component, holmes!</MediumHeading>
+              <Heading medium>Welcome to the main component, holmes!</Heading>
             </CardContent>
           </Card>
         </Cell>
@@ -97,11 +91,11 @@ export default class extends React.Component {
             <CardTitle>Headings</CardTitle>
 
             <CardContent>
-              <ExtraSmallHeading>Extra Small heading!</ExtraSmallHeading>
-              <SmallHeading>Small heading!</SmallHeading>
-              <MediumHeading>Medium heading!</MediumHeading>
-              <LargeHeading>Large heading!</LargeHeading>
-              <ExtraLargeHeading>Extra Large heading!</ExtraLargeHeading>
+              <Heading extraSmall>Extra Small heading!</Heading>
+              <Heading small>Small heading!</Heading>
+              <Heading medium>Medium heading!</Heading>
+              <Heading large>Large heading!</Heading>
+              <Heading extraLarge>Extra Large heading!</Heading>
             </CardContent>
           </Card>
         </Cell>

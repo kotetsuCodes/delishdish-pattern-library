@@ -1,21 +1,23 @@
 import styled from 'styled-components'
 
-export const ExtraSmallHeading = styled.h5`
-  font-size: 1.5rem;
-`
+function getFontSize(props) {
+  if (props.extraSmall) return '1.5rem'
+  else if (props.small) return '2rem'
+  else if (props.medium) return '2.5rem'
+  else if (props.large) return '3rem'
+  return '3.75rem'
+}
 
-export const SmallHeading = styled.h4`
-  font-size: 2rem;
-`
+function getFontWeight(props) {
+  if (props.extraSmall) return '400'
+  else if (props.small) return '500'
+  else if (props.medium) return '600'
+  else if (props.large) return '700'
+  return '800'
+}
 
-export const MediumHeading = styled.h3`
-  font-size: 2.5rem;
-`
-
-export const LargeHeading = styled.h2`
-  font-size: 3rem;
-`
-
-export const ExtraLargeHeading = styled.h1`
-  font-size: 3.75rem;
+export default styled.div`
+  margin: 10px 0 10px 0;
+  font-size: ${props => getFontSize(props)};
+  font-weight: ${props => getFontWeight(props)};
 `
