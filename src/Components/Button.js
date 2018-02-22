@@ -28,6 +28,7 @@ function getPadding(props) {
 }
 
 export default styled.button`
+  cursor: pointer;
   font-size: 1rem;
   margin: 5px;
   background-color: ${props => getBackgroundColor(props)};
