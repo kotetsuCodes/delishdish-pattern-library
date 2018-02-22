@@ -3,14 +3,7 @@ import { Grid, Cell } from 'styled-css-grid'
 import styled from 'styled-components'
 import { Card, CardTitle, CardContent } from '../Components/Card'
 import Theme from '../Helpers/Theme'
-import {
-  DefaultButton,
-  PrimaryButton,
-  InfoButton,
-  SuccessButton,
-  WarningButton,
-  DangerButton,
-} from '../Components/Button'
+import Button from '../Components/Button'
 import {
   ExtraSmallHeading,
   SmallHeading,
@@ -121,12 +114,25 @@ export default class extends React.Component {
           >
             <CardTitle textColor={Theme.Cards.White.Color}>Buttons ahoy!</CardTitle>
             <CardContent>
-              <DefaultButton>Default</DefaultButton>
-              <PrimaryButton>Primary</PrimaryButton>
-              <InfoButton>Info</InfoButton>
-              <SuccessButton>Success</SuccessButton>
-              <WarningButton>Warning</WarningButton>
-              <DangerButton>Danger</DangerButton>
+              <Button>Default</Button>
+              <Button primary>Primary</Button>
+              <Button info>Info</Button>
+              <Button success>Success</Button>
+              <Button warning>Warning</Button>
+              <Button danger>Danger</Button>
+
+              <Button primary extraSmall>
+                Extra small button
+              </Button>
+              <Button primary small>
+                Small button
+              </Button>
+              <Button primary medium>
+                Medium button
+              </Button>
+              <Button primary large>
+                Large button
+              </Button>
             </CardContent>
           </Card>
         </Cell>
