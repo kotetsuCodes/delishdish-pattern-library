@@ -1,34 +1,56 @@
 export default {
   MainColors: {
-    GrayNurse: '#F1F3F0',
-    Empress: '#88757C',
-    Schist: '#AEB39B',
-    GullGray: '#97A4AF',
-    EbonyClay: '#2C3344',
+    White: '#FAF8F9',
+    Yellow: '#E8B336',
+    LightBlue: '#35CAD3',
+    Pink: '#B95E76',
+    DarkBlue: '#187E94',
   },
 
-  // Blue: {
-  //   Background: '#246068',
-  //   PrimaryButton: {
-  //     Fill: '#02879A',
-  //     Color: '#000000',
-  //   }, // #00AFC8
-  //   SecondaryButton: {
-  //     Fill: '#293536',
-  //     Color: '#000000',
-  //   },
-  // },
-  // Yellow: {
-  //   Background: '#AA8639',
-  //   PrimaryButton: {
-  //     Fill: '#FFAE00',
-  //     Color: '#000000',
-  //   },
-  //   SecondaryButton: '#595243',
-  // },
-  // Red: {
-  //   Background: '#AA4139',
-  //   PrimaryButton: { Fill: '#FF1300', Color: '#594443' },
-  //   SecondaryButton: { Fill: '#594443', Color: '#000000' },
-  // },
+  InfoTextColor: '#D0DDE0',
+
+  Default: {
+    Color: '#FFFFFF',
+    Fill: '#999999',
+  },
+  Primary: {
+    Color: '#FFFFFF',
+    Fill: '#35CAD3',
+  },
+  Info: {
+    Color: '#FFFFFF',
+    Fill: '#135766',
+  },
+  Success: {
+    Color: '#FFFFFF',
+    Fill: '#45B777',
+  },
+  Warning: {
+    Color: '#FFFFFF',
+    Fill: '#c2a73f',
+  },
+  Danger: {
+    Color: '#FFFFFF',
+    Fill: '#F44336',
+  },
+
+  Cards: {
+    BorderRadius: '6px',
+    White: {
+      Color: '#187e94',
+      Fill: '#faf8f9',
+    },
+    LightBlue: {
+      Color: '#FFFFFF',
+      Fill: '#35CAD3',
+    },
+    DarkBlue: {
+      Color: '#FFFFFF',
+      Fill: '#187E94',
+    },
+    Pink: {
+      Color: '#FFFFFF',
+      Fill: '#B95E75',
+    },
+  },
 }

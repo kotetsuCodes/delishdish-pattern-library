@@ -1,9 +1,16 @@
 import React from 'react'
 import { Grid, Cell } from 'styled-css-grid'
 import styled from 'styled-components'
-import Section from '../Components/Section'
+import { Card, CardTitle, CardContent } from '../Components/Card'
 import Theme from '../Helpers/Theme'
-import { PrimaryButton, SecondaryButton } from '../Components/Button'
+import {
+  DefaultButton,
+  PrimaryButton,
+  InfoButton,
+  SuccessButton,
+  WarningButton,
+  DangerButton,
+} from '../Components/Button'
 import {
   ExtraSmallHeading,
   SmallHeading,
@@ -47,88 +54,106 @@ export default class extends React.Component {
     return (
       <Grid columns={12}>
         <Cell left={3} width={8} top={1}>
-          <Section backgroundColor={Theme.MainColors.Empress}>
-            <MediumHeading>Welcome to the main component, holmes!</MediumHeading>
-          </Section>
+          <Card
+            backgroundColor={Theme.Cards.White.Fill}
+            textColor={Theme.Cards.White.Color}
+            borderRadius={Theme.Cards.BorderRadius}
+          >
+            <CardTitle />
+            <CardContent>
+              <MediumHeading>Welcome to the main component, holmes!</MediumHeading>
+            </CardContent>
+          </Card>
         </Cell>
 
         <Cell left={3} width={8} top={2}>
-          {/* <Section backgroundColor={Theme.Blue.SecondaryButton.Fill}>
-            <SmallHeading>Default Theme</SmallHeading>
-            <Grid columns="repeat(4,minmax(120px,1fr))">
-              <Cell center middle>
-                <ColorSwatch backgroundColor={Theme.Blue.Background}>
-                  Primary Background
-                </ColorSwatch>
-              </Cell>
-              <Cell center middle>
-                <ColorSwatch backgroundColor={Theme.Blue.PrimaryButton.Fill}>
-                  Primary Fill
-                </ColorSwatch>
-              </Cell>
-              <Cell center middle>
-                <ColorSwatch backgroundColor={Theme.Blue.PrimaryButton.Color} textColor="#FFFFFF">
-                  Primary Text
-                </ColorSwatch>
-              </Cell>
-              <Cell center middle style={{ border: '1px', 'border-style': 'dashed' }}>
-                <ColorSwatch backgroundColor={Theme.Blue.SecondaryButton.Fill}>
-                  Secondary Fill
-                </ColorSwatch>
-              </Cell>
-              <Cell center middle>
-                <ColorSwatch backgroundColor={Theme.Red.Background}>Primary Background</ColorSwatch>
-              </Cell>
-              <Cell center middle>
-                <ColorSwatch backgroundColor={Theme.Red.PrimaryButton.Fill}>
-                  Primary Fill
-                </ColorSwatch>
-              </Cell>
-              <Cell center middle>
-                <ColorSwatch backgroundColor={Theme.Red.PrimaryButton.Color} textColor="#FFFFFF">
-                  Primary Text
-                </ColorSwatch>
-              </Cell>
-              <Cell center middle>
-                <ColorSwatch backgroundColor={Theme.Red.SecondaryButton.Fill}>
-                  Secondary Fill
-                </ColorSwatch>
-              </Cell>
-            </Grid>
-          </Section> */}
+          <Card
+            backgroundColor={Theme.Cards.White.Fill}
+            textColor="#FFFFFF"
+            borderRadius={Theme.Cards.BorderRadius}
+          >
+            <CardTitle textColor={Theme.Cards.White.Color}>Default Theme</CardTitle>
+            <CardContent>
+              <Grid columns="repeat(4,minmax(120px,1fr))">
+                <Cell center middle>
+                  <ColorSwatch backgroundColor={Theme.MainColors.DarkBlue}>Background</ColorSwatch>
+                </Cell>
+                <Cell center middle>
+                  <ColorSwatch backgroundColor={Theme.MainColors.LightBlue}>Light Blue</ColorSwatch>
+                </Cell>
+                <Cell center middle>
+                  <ColorSwatch backgroundColor={Theme.MainColors.Pink}>Pink</ColorSwatch>
+                </Cell>
+                <Cell center middle>
+                  <ColorSwatch backgroundColor={Theme.MainColors.White}>White</ColorSwatch>
+                </Cell>
+                <Cell center middle>
+                  <ColorSwatch backgroundColor={Theme.MainColors.Yellow}>Yellow</ColorSwatch>
+                </Cell>
+              </Grid>
+            </CardContent>
+          </Card>
         </Cell>
 
         <Cell left={3} width={8} top={3}>
-          <Section backgroundColor={Theme.MainColors.Empress}>
-            <ExtraSmallHeading>Extra Small heading!</ExtraSmallHeading>
-            <SmallHeading>Small heading!</SmallHeading>
-            <MediumHeading>Medium heading!</MediumHeading>
-            <LargeHeading>Large heading!</LargeHeading>
-            <ExtraLargeHeading>Extra Large heading!</ExtraLargeHeading>
-          </Section>
+          <Card
+            backgroundColor={Theme.Cards.Pink.Fill}
+            textColor={Theme.Cards.Pink.Color}
+            borderRadius={Theme.Cards.BorderRadius}
+          >
+            <CardTitle>Headings</CardTitle>
+
+            <CardContent>
+              <ExtraSmallHeading>Extra Small heading!</ExtraSmallHeading>
+              <SmallHeading>Small heading!</SmallHeading>
+              <MediumHeading>Medium heading!</MediumHeading>
+              <LargeHeading>Large heading!</LargeHeading>
+              <ExtraLargeHeading>Extra Large heading!</ExtraLargeHeading>
+            </CardContent>
+          </Card>
         </Cell>
 
         <Cell left={3} width={8} top={4}>
-          <Section backgroundColor={Theme.MainColors.Empress}>
-            <SmallHeading>Buttons ahoy!</SmallHeading>
-
-            <PrimaryButton>Primary</PrimaryButton>
-
-            <SecondaryButton>Secondary</SecondaryButton>
-          </Section>
+          <Card
+            backgroundColor={Theme.Cards.White.Fill}
+            textColor={Theme.Cards.White.Color}
+            borderRadius={Theme.Cards.BorderRadius}
+          >
+            <CardTitle textColor={Theme.Cards.White.Color}>Buttons ahoy!</CardTitle>
+            <CardContent>
+              <DefaultButton>Default</DefaultButton>
+              <PrimaryButton>Primary</PrimaryButton>
+              <InfoButton>Info</InfoButton>
+              <SuccessButton>Success</SuccessButton>
+              <WarningButton>Warning</WarningButton>
+              <DangerButton>Danger</DangerButton>
+            </CardContent>
+          </Card>
         </Cell>
 
         <Cell left={3} width={8} top={5}>
-          <Section backgroundColor={Theme.MainColors.Empress}>
-            <TextInput placeholder="Regular text input" />
-            <Select options={selectOptions} />
-            {/* <Toggle /> */}
-            <div onClick={e => this.handleClick(e)}>
-              <Checkbox size="small" labelDisplay="I'm a small checkbox!" isChecked={isChecked} />
-              <Checkbox size="medium" labelDisplay="I'm a medium checkbox!" isChecked={isChecked} />
-              <Checkbox size="large" labelDisplay="I'm a large checkbox!" isChecked={isChecked} />
-            </div>
-          </Section>
+          <Card
+            backgroundColor={Theme.Cards.LightBlue.Fill}
+            textColor={Theme.Cards.LightBlue.Color}
+            borderRadius={Theme.Cards.BorderRadius}
+          >
+            <CardTitle>Here be inputs!</CardTitle>
+
+            <CardContent>
+              <TextInput placeholder="Regular text input" />
+              <Select options={selectOptions} />
+              {/* <Toggle /> */}
+              <div onClick={e => this.handleClick(e)}>
+                <Checkbox size="small" labelDisplay="I'm a small checkbox!" isChecked={isChecked} />
+                <Checkbox
+                  size="medium"
+                  labelDisplay="I'm a medium checkbox!"
+                  isChecked={isChecked}
+                />
+                <Checkbox size="large" labelDisplay="I'm a large checkbox!" isChecked={isChecked} />
+              </div>
+            </CardContent>
+          </Card>
         </Cell>
       </Grid>
     )

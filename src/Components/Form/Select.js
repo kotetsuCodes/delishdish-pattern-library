@@ -8,16 +8,19 @@ const SelectStyle = styled.select`
   display: 'block';
   padding: 16px;
   border-radius: 2px;
-  border: 2px solid ${Theme.MainColors.Empress};
+  border: 1px solid ${Theme.MainColors.White};
+  outline: none;
   width: 100%;
   transition: border 500ms;
 
-  &:foucs {
-    border: 2px solid ${Theme.MainColors.Empress};
+  &:focus {
+    outline: none;
+    border: 1px solid ${Theme.MainColors.DarkBlue};
   }
 
   &:hover {
-    border: 2px solid ${Theme.MainColors.Empress};
+    outline: none;
+    border: 1px solid ${Theme.MainColors.DarkBlue};
   }
 `
 
