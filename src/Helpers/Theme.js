@@ -4,6 +4,7 @@ export default {
     Yellow: '#E8B336',
     LightBlue: '#35CAD3',
     Pink: '#B95E76',
+    LighterPink: '#c9788d',
     DarkBlue: '#187E94',
   },
 
