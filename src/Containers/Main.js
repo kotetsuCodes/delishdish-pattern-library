@@ -6,9 +6,11 @@ import Theme from '../Helpers/Theme'
 import Button from '../Components/Button'
 import Heading from '../Components/Heading'
 import TextInput from '../Components/Form/TextInput'
+import Password from '../Components/Form/Password'
 import Select from '../Components/Form/Select'
 // import Toggle from '../Components/Form/Toggle'
 import Checkbox from '../Components/Form/Checkbox'
+import Alert from '../Components/Alert/Alert'
 
 const ColorSwatch = styled.div`
   background-color: ${props => props.backgroundColor};
@@ -150,6 +152,7 @@ export default class extends React.Component {
 
             <CardContent>
               <TextInput placeholder="Regular text input" />
+              <Password type="password" placeholder="a password goes here" />
               <Select options={selectOptions} />
               <div>
                 <Checkbox
@@ -195,6 +198,17 @@ export default class extends React.Component {
                   </Cell>
                 ))}
               </Grid>
+            </CardContent>
+          </Card>
+        </Cell>
+        <Cell left={3} width={8} top={7}>
+          <Card backgroundColor={Theme.Cards.White.Fill} textColor={Theme.Cards.White.Color}>
+            <CardTitle textColor={Theme.Cards.White.Color}>Alerts!</CardTitle>
+            <CardContent>
+              <Alert alertType="Success">Success! Something worked flawlessly!</Alert>
+              <Alert alertType="Info">Info. This is purely for informational porpoises</Alert>
+              <Alert alertType="Warning">Warning! Whoa! Watch yourself now!</Alert>
+              <Alert alertType="Danger">Danger! Something went really wrong bad!</Alert>
             </CardContent>
           </Card>
         </Cell>
