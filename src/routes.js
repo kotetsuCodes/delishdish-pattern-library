@@ -1,14 +1,10 @@
 import React from 'react'
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 import Main from './Containers/Main'
-import {
-  Sidebar,
-  SideNav,
-  SideNavItem,
-  SideNavLink,
-  ActiveLink,
-} from './Components/Sidebar/Sidebar'
-import Icon from './Components/Icon'
+import { Sidebar, NavItem } from './Components/Sidebar/Sidebar'
+import CloudIcon from './Components/Icons/CloudIcon'
+import LayoutIcon from './Components/Icons/LayoutIcon'
+import CodeIcon from './Components/Icons/CodeIcon'
 
 const RouteWithSidebar = ({ component: Component, ...rest }) => (
   <Route
@@ -16,18 +12,9 @@ const RouteWithSidebar = ({ component: Component, ...rest }) => (
     render={props => (
       <div>
         <Sidebar>
-          <SideNav>
-            <SideNavItem>
-              <SideNavLink exact to="/" activeClassName={ActiveLink}>
-                <Icon size="small" className="fas fa-flask" /> Example item!
-              </SideNavLink>
-            </SideNavItem>
-            <SideNavItem>
-              <SideNavLink exact to="/test">
-                <Icon size="small" className="fas fa-book" /> Yet another!
-              </SideNavLink>
-            </SideNavItem>
-          </SideNav>
+          <NavItem linkTo="/" linkText="Cloud" icon={<CloudIcon width={24} height={24} />} />
+          <NavItem linkTo="/test" linkText="Layout" icon={<LayoutIcon width={24} height={24} />} />
+          <NavItem linkTo="/test2" linkText="Code" icon={<CodeIcon width={24} height={24} />} />
         </Sidebar>
         <Component {...props} />
       </div>

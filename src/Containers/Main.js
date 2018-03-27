@@ -5,12 +5,14 @@ import { Card, CardTitle, CardContent } from '../Components/Card'
 import Theme from '../Helpers/Theme'
 import Button from '../Components/Button'
 import Heading from '../Components/Heading'
-import TextInput from '../Components/Form/TextInput'
-import Password from '../Components/Form/Password'
+import Input from '../Components/Form/Input'
 import Select from '../Components/Form/Select'
 // import Toggle from '../Components/Form/Toggle'
 import Checkbox from '../Components/Form/Checkbox'
 import Alert from '../Components/Alert/Alert'
+import CodeIcon from '../Components/Icons/CodeIcon'
+import LayoutIcon from '../Components/Icons/LayoutIcon'
+import CloudIcon from '../Components/Icons/CloudIcon'
 
 const ColorSwatch = styled.div`
   background-color: ${props => props.backgroundColor};
@@ -19,13 +21,6 @@ const ColorSwatch = styled.div`
 `
 
 export default class extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      checkboxChecked: false,
-    }
-  }
-
   generateGridExample = () => {
     const gridCells = []
 
@@ -36,19 +31,11 @@ export default class extends React.Component {
     return gridCells
   }
 
-  handleClick = (e) => {
-    console.log('handleClick was called')
-    this.setState({ checkboxChecked: !this.state.checkboxChecked })
-    alert(this.state.checkboxChecked)
-  }
-
   render() {
     const selectOptions = [
       { display: 'This is an option!', value: 'This is an option' },
       { display: 'This is also an option!', value: 'This is also an option' },
     ]
-
-    const isChecked = this.state.checkboxChecked
 
     return (
       <Grid columns={12}>
@@ -75,7 +62,7 @@ export default class extends React.Component {
             <CardContent>
               <Grid columns="repeat(4,minmax(120px,1fr))">
                 <Cell center middle>
-                  <ColorSwatch backgroundColor={Theme.MainColors.DarkBlue}>Background</ColorSwatch>
+                  <ColorSwatch backgroundColor={Theme.MainColors.DarkBlue}>Blue</ColorSwatch>
                 </Cell>
                 <Cell center middle>
                   <ColorSwatch backgroundColor={Theme.MainColors.LightBlue}>Light Blue</ColorSwatch>
@@ -151,28 +138,13 @@ export default class extends React.Component {
             <CardTitle>Here be inputs!</CardTitle>
 
             <CardContent>
-              <TextInput placeholder="Regular text input" />
-              <Password type="password" placeholder="a password goes here" />
+              <Input placeholder="Regular text input" />
+              <Input type="password" placeholder="a password goes here" />
               <Select options={selectOptions} />
               <div>
-                <Checkbox
-                  size="small"
-                  labelDisplay="I'm a small checkbox!"
-                  isChecked={isChecked}
-                  handleClick={this.handleClick}
-                />
-                <Checkbox
-                  size="medium"
-                  labelDisplay="I'm a medium checkbox!"
-                  isChecked={isChecked}
-                  handleClick={this.handleClick}
-                />
-                <Checkbox
-                  size="large"
-                  labelDisplay="I'm a large checkbox!"
-                  isChecked={isChecked}
-                  handleClick={this.handleClick}
-                />
+                <Checkbox size="small" labelDisplay="I'm a small checkbox!" />
+                <Checkbox size="medium" labelDisplay="I'm a medium checkbox!" />
+                <Checkbox size="large" labelDisplay="I'm a large checkbox!" />
               </div>
             </CardContent>
           </Card>
@@ -209,6 +181,17 @@ export default class extends React.Component {
               <Alert alertType="Info">Info. This is purely for informational porpoises</Alert>
               <Alert alertType="Warning">Warning! Whoa! Watch yourself now!</Alert>
               <Alert alertType="Danger">Danger! Something went really wrong bad!</Alert>
+            </CardContent>
+          </Card>
+        </Cell>
+
+        <Cell left={3} width={8} top={8}>
+          <Card backgroundColor={Theme.Cards.White.Fill} textColor={Theme.Cards.White.Color}>
+            <CardTitle textColor={Theme.Cards.White.Color}>Icons!</CardTitle>
+            <CardContent>
+              <CodeIcon width={24} height={24} />
+              <CloudIcon width={24} height={24} />
+              <LayoutIcon width={24} height={24} />
             </CardContent>
           </Card>
         </Cell>

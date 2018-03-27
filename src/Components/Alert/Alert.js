@@ -19,8 +19,8 @@ function getBackgroundColor(alertType) {
 export default styled.div`
   background-color: ${props => getBackgroundColor(props.alertType)};
   color: ${Theme.Primary.Color};
-  padding: 32px;
+  padding: 24px;
   border-radius: 4px;
-  margin: 2px;
+  margin: 4px 0;
   opacity: 0.75;
 `
