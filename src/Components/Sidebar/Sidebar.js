@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import Theme from '../../Helpers/Theme'
 
-export const SideNav = styled.ul`
+const SideNav = styled.ul`
   margin-top: 50px;
   list-style-type: 'none';
 `
@@ -41,13 +41,25 @@ const NavItemWrapper = styled.li`
   height: 40px;
 `
 
-export const SidebarStyled = styled.div`
+const SidebarStyled = styled.div`
   width: ${props => props.width || '260px'};
   position: fixed;
   top: 0;
   left: 0;
   background-color: ${props => props.fill || Theme.MainColors.Pink};
   height: 100vh;
+
+  transition: width 300ms;
+
+  @media (max-width: 1024px) {
+    width: 64px;
+  }
+`
+
+const LinkText = styled.span`
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `
 
 export const Sidebar = props => (
@@ -59,7 +71,7 @@ export const Sidebar = props => (
 export const NavItem = ({ linkText, icon, linkTo }) => (
   <NavItemWrapper style={{ display: 'flex', alignItems: 'center' }}>
     <NavItemStyled to={linkTo} linkText={linkText}>
-      {icon} <span style={{ paddingLeft: '24px' }}>{linkText}</span>
+      {icon} <LinkText style={{ paddingLeft: '24px' }}>{linkText}</LinkText>
     </NavItemStyled>
   </NavItemWrapper>
 )

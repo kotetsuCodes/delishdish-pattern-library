@@ -40,4 +40,8 @@ export default styled.button`
   &:focus {
     outline: none;
   }
+
+  &:active {
+    background-color: ;
+  }
 `
